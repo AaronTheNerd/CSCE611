@@ -1,0 +1,15 @@
+*.log
+*.o
+*.so
+*.a
+*.gch
+*.hex
+*.vcd
+*#
+__pycache__
+./build
+build/*
+./build/*
+./work
+work/*
+./work/*
