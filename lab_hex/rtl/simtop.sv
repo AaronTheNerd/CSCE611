@@ -32,7 +32,7 @@ module simtop (
 
 // your code here
 
-    int unsigned count = 32'h00000000;
+    int unsigned count;
     
     hexdecoder seg7(count[31:28], HEX7);
     hexdecoder seg6(count[27:24], HEX6);
@@ -44,12 +44,10 @@ module simtop (
     hexdecoder seg0(count[3:0], HEX0);
 
     always_ff @(posedge CLOCK_50, posedge KEY[3]) begin
-        if (KEY[3]) begin
-            count <= 0;
-        end
-        else begin
+        if (KEY[3])
+            count <= 32'd0;
+        else
             count <= count + 1;
-        end
     end
 
 

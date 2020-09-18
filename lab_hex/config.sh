@@ -42,7 +42,7 @@ REGISTER_MEMORY="regfile0.mem"
 
 # This should be your USC network ID. If your university email address is
 # jsmith@email.sc.edu, you should set this to "jsmith".
-STUDENTID="CHANGEME"
+STUDENTID="abarge"
 
 #### VALUES YOU PROBABLY DONT NEED TO CHANGE ##################################
 

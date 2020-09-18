@@ -137,7 +137,7 @@ rars:
 .PHONY: rars
 
 testbench:
-	$(VLOG) -pedanticerrors -lint -hazards -source -stats=all $$(ls -1 -q $(RTL_DIR)/*.sv | grep -v simtop.sv) $$(ls -q ./testbench/*.sv)
+	$(VLOG) -pedanticerrors -lint -hazards -source -stats=all $$(ls -1 -q $(RTL_DIR)/*.sv) $$(ls -q ./testbench/*.sv)
 	printf "run 10000\n" | $(VSIM) -pedanticerrors -hazards -c -sva -immedassert work.testtop -do /dev/stdin
 .PHONY: testbench
 
