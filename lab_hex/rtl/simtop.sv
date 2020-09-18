@@ -7,7 +7,7 @@ module simtop (
 	//////////// CLOCK //////////
 	input                                   CLOCK_50,
 	input                                   CLOCK2_50,
-        input                                   CLOCK3_50,
+    input                                   CLOCK3_50,
 
 	//////////// LED //////////
 	output               [8:0]              LEDG,
@@ -28,9 +28,36 @@ module simtop (
 	output               [6:0]              HEX5,
 	output               [6:0]              HEX6,
 	output               [6:0]              HEX7
-
 );
 
 // your code here
+
+    int unsigned count = 32'h00000000;
+    
+    hexdecoder seg7(count[31:28], HEX7);
+    hexdecoder seg6(count[27:24], HEX6);
+    hexdecoder seg5(count[23:20], HEX5);
+    hexdecoder seg4(count[19:16], HEX4);
+    hexdecoder seg3(count[15:12], HEX3);
+    hexdecoder seg2(count[11:8], HEX2);
+    hexdecoder seg1(count[7:4], HEX1);
+    hexdecoder seg0(count[3:0], HEX0);
+
+    always_ff @(posedge CLOCK_50, posedge KEY[3]) begin
+        if (KEY[3]) begin
+            count <= 0;
+        end
+        else begin
+            count <= count + 1;
+        end
+    end
+
+
+
+
+
+
+
+
 
 endmodule
