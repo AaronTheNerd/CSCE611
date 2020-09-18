@@ -6,6 +6,9 @@ header-center: "Due: September 20, 2020"
 header-right: "CSCE611: Advanced Digital Design"
 ---
 
+## Running the Test-Bench
+`make testbench`
+
 ## Objective
 
 Your objective in this lab is to develop a decoder module, which will convert a
