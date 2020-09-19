@@ -7,7 +7,7 @@ header-right: "CSCE611: Advanced Digital Design"
 ---
 
 ## Running the Test-Bench
-`make testbench`
+`/opt/intel/quartus/20.1/modelsim_ase/bin/vlog testbench/testtop.sv && /opt/intel/quartus/20.1/modelsim_ase/bin/vsim work.testtop`
 
 ## Objective
 
