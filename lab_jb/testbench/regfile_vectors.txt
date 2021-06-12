@@ -1,0 +1,36 @@
+// dummy since the first vector gets ignored
+0_0000_0_00_00_00_00000000_00000000_00000000
+
+// write 0xdeadbeef to register 02
+2_0000_1_00_00_02_00000000_00000000_deadbeef
+
+// read on the next cycle should return 0xdeadbeef by either port
+1_0001_0_02_00_00_deadbeef_00000000_00000000  // port 1
+1_0002_0_00_02_00_00000000_deadbeef_00000000  // port 2
+1_0003_0_02_02_00_deadbeef_deadbeef_00000000  // both
+
+// test write bypass for reg 1
+1_0004_1_01_01_01_12345678_12345678_12345678
+
+// test write bypass for reg F
+1_0005_1_0f_0f_0f_cafecafe_cafecafe_cafecafe
+
+// test reading two DIFFERENT addrs on the same cycle (no write bypass)
+1_0006_0_01_0f_00_12345678_cafecafe_00000000
+
+// test writing to the 0 register and reading on the same cycle
+1_0007_1_00_00_00_00000000_00000000_8badf00d
+
+// test writing to the 0 register then reading on a later cycle by attempting
+// to read the value written in the previous test case.
+1_0008_0_00_00_00_00000000_00000000_00000000
+
+// test that writing with we low does not work using reg3. Note that we zero
+// out reg 3 first.
+1_0009_1_03_03_03_00000000_00000000_00000000
+1_000a_0_03_03_00_00000000_00000000_00000000
+1_000b_0_03_03_03_00000000_00000000_fadecafe
+1_000c_0_03_03_00_00000000_00000000_00000000
+
+// finish
+4_0000_0_00_00_00_00000000_00000000_00000000

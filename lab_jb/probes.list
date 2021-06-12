@@ -1,0 +1,12 @@
+hex	simtop__DOT__dut__DOT__pc_F
+inst	simtop__DOT__dut__DOT__command_F
+hex	simtop__DOT__dut__DOT__stall_F
+hex	simtop__DOT__dut__DOT__pc_EX
+inst	simtop__DOT__dut__DOT__command_EX
+hex	simtop__DOT__dut__DOT__cond_EX
+hex	simtop__DOT__dut__DOT__zero_EX
+hex	simtop__DOT__dut__DOT__branch_EX
+hex	simtop__DOT__dut__DOT__branch_addr_EX
+hex	simtop__DOT__dut__DOT__jump_EX
+hex	simtop__DOT__dut__DOT__jump_addr_EX
+hex	simtop__DOT__dut__DOT__stall_EX
